@@ -1,0 +1,37 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.test-form.test-form--login {
+  max-width: 517px;
+
+  .test-form__group {
+    .btn--submit {
+      display: block;
+      margin: 67px auto 0;
+      max-width: 280px;
+      width: 100%;
+    }
+  }
+
+  .spinner {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.forgot-reference {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.sign-up-reference {
+  color: rgba(37, 39, 43, 0.5);
+  font-size: 14px;
+  padding-top: 30px;
+}

@@ -1,0 +1,40 @@
+
+<form
+  class="test-form test-form--login"
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h2 class="test-form__title">Login</h2>
+  <div *ngIf="submitted && (formControls.email.errors || formControls.password.errors || error)"
+       class="invalid-feedback">
+    Emails or password is wrong. Please try again
+  </div>
+  <div class="test-form__group">
+    <label class="input-label">Email</label>
+    <input class="input"
+      [ngClass]="{ 'is-invalid': submitted && (formControls.email.errors || error) }"
+      formControlName="email"
+      type="email">
+  </div>
+  <div class="test-form__group">
+    <label class="input-label">Password</label>
+    <input class="input"
+      [ngClass]="{ 'is-invalid': submitted && (formControls.password.errors || error) }"
+      formControlName="password"
+      type="password">
+    <div class="forgot-reference">
+      <a href="#" class="forgot">Forgot password?</a>
+    </div>
+  </div>
+  <button type="button" (click)="socialSignIn('google')">Sign in with Google</button>
+  <div class="test-form__group">
+    <button class="btn btn--primary btn--submit"
+      [disabled]="loading">
+      Login
+    </button>
+    <p-progressSpinner class="spinner"
+                       *ngIf="loading"
+    ></p-progressSpinner>
+  </div>
+  <div class="sign-up-reference">Don’t have an account? <a routerLink="../registration" class="sign-up">Sign up</a></div>
+</form>

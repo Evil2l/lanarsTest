@@ -1,0 +1,27 @@
+<header class="header"
+  *ngIf="isAuth">
+  <nav class="nav">
+    <ul class="nav-list nav-list--left">
+      <li>
+        <a class="nav-list__link" routerLink="/home">Profile</a>
+      </li>
+      <li>
+        <a class="nav-list__link" routerLink="/dashboard">Photos</a>
+      </li>
+    </ul>
+    <ul class="nav-list nav-list--right">
+      <li>
+        <a class="nav-list__link" (click)="logout($event)">log out</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer"
+  *ngIf="isAuth">
+  <p>some footer</p>
+</footer>
